@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Kufam:wght@700&family=Tajawal:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.6s ease;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Tajawal", sans-serif;
+  background: #d9e2ec;
+  overflow-x: hidden;
+}
+.turn {
+  position: absolute;
+  z-index: 10000;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #bcd0d5;
+  padding: 7px;
+  top: 30%;
+  right: 2%;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+.turn:hover {
+  background: white;
+}
+.turn img {
+  width: 100%;
+}
+.nav-container img {
+  width: 70px;
+  height: 70px;
+  margin: 0 20px;
+  border-radius: 100%;
+}
+h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: #f0f4f8;
+  line-height: 1.8;
+}
+
+h1 span {
+  color: #27ab83;
+}
+
+h2 {
+  color: #243b53;
+  font-size: 3.4rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #2b4561;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.content h1 + h3 {
+  font-size: 2rem;
+  width: fit-content;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #d5d5d5;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #345375;
+  line-height: 2;
+}
+
+/* Nav Section */
+.nav-container {
+  background: #334e68;
+  color: #f0f4f8;
+}
+
+nav {
+  width: 90%;
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  font-size: 1.6rem;
+}
+nav ul li {
+  position: relative;
+  padding: 5px 0;
+}
+nav ul li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 10px;
+  background: #f0f4f8;
+  transition: 0.6s ease;
+}
+nav ul li:hover:after {
+  width: 100%;
+}
+nav .logo {
+  font-family: "Kufam", cursive;
+  font-weight: bold;
+  flex: 3;
+  color: #f0f4f8;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  flex: 1;
+}
+
+nav ul li a {
+  color: #f0f4f8;
+  text-decoration: none;
+}
+
+/* Hero Section */
+
+.hero {
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+      90deg,
+      rgba(51, 78, 104, 0.2) 0%,
+      rgba(20, 63, 92, 0.8) 20%
+    ),
+    url("back.jpg");
+  background-repeat: no-repeat;
+  animation: herobg 3s ease-in;
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  width: 90%;
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0.75rem 3rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: #243b53;
+  background: #27ab83;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #239673;
+}
+
+.btn:active {
+  scale: 0.98;
+}
+
+/* Qualities Section */
+#qualities {
+  width: 90%;
+  max-width: 1366px;
+  margin: 4rem auto;
+  height: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.qualities-container {
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 2rem;
+  padding-top: 5rem;
+  flex-wrap: wrap;
+}
+
+.quality {
+  background: #bcccdc;
+  padding: 4rem 0;
+  width: 30%;
+  position: relative;
+  transform-style: preserve-3d;
+  text-align: center;
+}
+/*start reversing*/
+.quality .content-quality {
+  position: relative;
+  z-index: 2;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+.quality .back-end {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  border-radius: 5px;
+  object-fit: fill;
+  z-index: 1;
+  opacity: 0;
+}
+.quality:hover {
+  transition: 1s ease;
+  transform: rotateY(180deg);
+}
+.quality:hover .back-end {
+  opacity: 1;
+  transition: 2s ease;
+}
+/*start reversing*/
+.quality p {
+  text-align: center;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i {
+  color: #27ab83;
+  font-size: 2.4rem;
+  margin-left: 1rem;
+  opacity: 0.7;
+}
+
+/*our products*/
+.work-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 40px 0;
+}
+.our-work {
+  width: 90%;
+}
+.work-container .ourwork-content {
+  text-align: center;
+  margin: 20px 0;
+}
+.work-container .our-work img {
+  width: 100%;
+  height: 100%;
+}
+.note {
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  grid-template-rows: repeat(2, 38%);
+  gap: 20px 20px;
+}
+.note div {
+  border-radius: 10px;
+  perspective: 300px;
+  transition: 0.6s ease;
+  overflow: hidden;
+}
+.note div img:hover {
+  transform: translateZ(20px);
+}
+.note div:first-child {
+  grid-area: 1 / 1 /1/3;
+}
+.work-container .buy {
+  text-align: center;
+  margin: 15px 0px;
+}
+.work-container .buy a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  background: #243b53;
+  border-radius: 10px;
+  transition: 0.6s ease;
+  font-size: 14px;
+}
+.work-container .buy:hover a {
+  color: #243b53;
+  background: white;
+}
+/*our products*/
+
+/* About us */
+
+.about-container {
+  background: #334e68;
+}
+.about-us {
+  width: 90%;
+  max-width: 1366px;
+  margin: 0 auto;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-us img {
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.about-us .about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content h2 {
+  color: #d9d9d9;
+}
+.about-content p {
+  margin-top: 1rem;
+  width: 80%;
+  color: #d5d5d5;
+}
+
+/* Contact us */
+
+.contact-us {
+  width: 90%;
+  max-width: 1366px;
+  margin: 5rem auto 0 auto;
+  height: 100%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-us .child {
+  width: 90%;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+.contact-us .child div {
+  background-color: #334e68;
+  font-size: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 5px;
+  text-align: center;
+}
+.contact-us .child div a {
+  text-decoration: none;
+  color: white;
+}
+.contact-us .child div:hover,
+.contact-us .whats div:hover {
+  background: white;
+}
+.contact-us .child div:hover a,
+.contact-us .whats div:hover a {
+  color: #2b4561;
+}
+.contact-us .whats div {
+  background: #334e68;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+.contact-us .whats div a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+/* Footer */
+footer {
+  background: #243b53;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+footer p {
+  color: #d9d9d9;
+}
+
+/* @keyframes herobg {
+from {
+transform: scale(1.2);
+}
+to {
+transform: scale(1);
+}
+} */
+
+/* Responsive Design */
+
+@media (max-width: 1400px) {
+  .hero .content {
+    align-items: center;
+    text-align: center;
+  }
+  .hero h4 {
+    width: 100%;
+  }
+
+  .hero::after {
+    animation: none;
+  }
+}
+@media (max-width: 1042px) {
+  html {
+    font-size: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+  .qualities-container {
+    flex-wrap: wrap;
+  }
+  .quality {
+    width: 100%;
+  }
+}
+
+@media (max-width: 752px) {
+  html {
+    font-size: 8px;
+  }
+  .about-us {
+    flex-direction: column-reverse;
+    padding: 15px;
+    justify-content: space-around;
+  }
+  .about-us img {
+    width: 80px;
+    height: 80px;
+  }
+  .about-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .contact-us .child {
+    flex-direction: column;
+  }
+  .contact-us .child div {
+    margin: 10px 0;
+  }
+  .note {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1400px) {
+  input,
+  textarea {
+    width: 40%;
+  }
+}
